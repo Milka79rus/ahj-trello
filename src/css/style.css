@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0079bf;
+    margin: 0;
+    padding: 20px;
+    user-select: none;
+}
+
+
+body.dragging-mode,
+body.dragging-mode * {
+    cursor: grabbing !important;
+}
+
+.board {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.column {
+    background-color: #ebecf0;
+    border-radius: 3px;
+    width: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.column-title {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #172b4d;
+}
+
+.cards-container {
+    min-height: 20px;
+    padding-bottom: 5px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+    cursor: grab;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.card-delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: #6b778c;
+    display: none;
+    font-size: 12px;
+}
+
+.card:hover .card-delete {
+    display: block;
+}
+
+.card-delete:hover {
+    color: #172b4d;
+    font-weight: bold;
+}
+
+.add-card-wrapper {
+    margin-top: 5px;
+}
+
+.add-card-btn {
+    color: #5e6c84;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    text-align: left;
+    border-radius: 3px;
+}
+
+.add-card-btn:hover {
+    background-color: rgba(9, 30, 66, .08);
+    color: #172b4d;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.add-card-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    border-radius: 3px;
+    border: none;
+    padding: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+    font-family: Arial, sans-serif;
+}
+
+.form-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.save-card-btn {
+    background-color: #0079bf;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.save-card-btn:hover {
+    background-color: #026aa7;
+}
+
+.cancel-card-btn {
+    background: transparent;
+    border: none;
+    color: #6b778c;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cancel-card-btn:hover {
+    color: #172b4d;
+}
+
+.dragged {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: rotate(2deg);
+}
+
+.placeholder {
+    background-color: rgba(9, 30, 66, .08);
+    border: 1px dashed #a5adba;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
